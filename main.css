@@ -14,3 +14,7 @@ th {
 .rate {
 	color: gray;
 }
+
+#quote-row-tpl {
+	display: none;
+}
