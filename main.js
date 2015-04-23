@@ -1,83 +1,86 @@
 // $(document).on('ready', function() {
 
 
-// 	$(document).on("click", ".rate", function(){
 
-// 		$(this).hide();
-// 		$(this).after("<input type='number' class='rating'>");
-// 		console.log("second ", this);
-// 	});
 
-//   	$(document).on("blur", ".rating", function(){
-//   		console.log("blur ", this);
-//   		var rating = $(".rating").val();
-//   		console.log("rating ", rating);
-//   		$(".rating").hide();
 
-//   		$(".rate").text(rating).show();
-
-//   	}) 
-// });
 
 //----------------------------------------------------------------------------------------------
 
-// var Quotes = function(quote, author, rating, avgRating){
-//   this.quote = quote;
-//   this.autor = author;
-//   this.rating = rating;
-//   this.avgRating = avgRating;
-// };
-// //console.log("Quotes ", Quotes);
+var Quotes = function(quote, author, rating, avgRating){
+  this.quote = quote;
+  this.author = author;
+  this.rating = 0;
+  this.avgRating = 0;
+};
+//console.log("Quotes ", Quotes);
+  $(".entry-form").on("submit", function(e) {
+    e.preventDefault();
+    var quote = $(".form-quote").val();
+    var author = $(".form-author").val();
 
-// Quotes.prototype.render = function() {
-// 	this.el = $("#quote-row-template")
-// 		.clone()
-// 		.attr("id", null);
-// //		.addClass("");
+    var oneRow =  new Quotes(quote, author);
+    console.log(oneRow);
+    $(".quote-table").append(oneRow.render());
+    $(".quote, .author").val("");
+  });
+Quotes.prototype.render = function() {
+	this.el = $("#quote-row-tpl")
+		.clone()
+		.attr("id", null);
+//		.addClass("");
 
-//   // Set the values to match the data
-//   this.el.find('.author').text(this.author);
-//   this.el.find('.quote').text(this.quote);
-//   // this.el.find('.rating').text(this.rating);
-//   // this.el.find('.avg-rating').text(this.avgRating);
+  // Set the values to match the data
+  this.el.find('.author').text(this.author);
+  this.el.find('.quote').text(this.quote);
+  this.el.find('.rating').text(this.rating);
+  // this.el.find('.avg-rating').text(this.avgRating);
+  var quote = this;
+  this.el.find(".rate").on("click", function(){
+   quote.el.find(".rate").hide();
+ //  $(this).after("<input type='number' class='enter-rating'>");
+   console.log("second ", this);
+ }); 
+   // this.el.find(".enter-rating").on("blur", function(){
+   //   console.log("blur ", this);
+   //   var rating = $(this).val();
+   //   console.log("rating ", rating);
+   //   quote.el.find(".enter-rating").hide();
+   //   quote.el.find(".rate").text(rating).css("color", "black").show();
+   //   quote.rating = $(this).val();
 
-//   return this.el;		
-// };
+   // });
+  return this.el;
+};
 
-//  var testInstance = new Quotes("What's Up", "Me");
-// // console.log("testInstance ", testInstance.quote);
+ var testInstance = new Quotes("What's Up?", "Me");
+// console.log("testInstance ", testInstance.quote);
 
-// console.log( testInstance.render());
 
-// 	$(".entry-form").on("submit", function(e) {
-// 		e.preventDefault();
-// 		var quote = $(".quote").val();
-// 		var author = $(".author").val();
-// 	console.log(quote);
-// 	console.log(author);
 
-// 		$(".quote-table").append("<tr><td>" + author + "</td><td>" + quote + "</td><td class='rate'>Rate 1-5</td></tr>")
 
-// 		$(".quote, .author").val("");
-// 	});
+
+ 
+
+
 
 //-----------------------------------------------------------------------------------------------
 
 
-function Apple (type) {
-    this.type = type;
-    this.color = "red";
-    this.getInfo = getAppleInfo;
-}
- 
-// anti-pattern! keep reading...
-function getAppleInfo() {
-    return this.color + ' ' + this.type + ' apple';
-}
+// function Apple (type) {
+//     this.type = type;
+//     this.color = "red";
+//     this.getInfo = getAppleInfo;
+// }
 
-var apple = new Apple('macintosh');
-apple.color = "reddish";
-alert(apple.getInfo());
+// // anti-pattern! keep reading...
+// function getAppleInfo() {
+//     return this.color + ' ' + this.type + ' apple';
+// }
+
+// var apple = new Apple('macintosh');
+// apple.color = "reddish";
+// alert(apple.getInfo());
 
 
 

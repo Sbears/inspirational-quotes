@@ -18,3 +18,11 @@ th {
 #quote-row-tpl {
 	display: none;
 }
+
+.rating, .avg-rating {
+  color: #C0C0C0;
+}
+
+.enter-rating {
+  width: 25px;
+}
