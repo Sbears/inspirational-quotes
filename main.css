@@ -1,3 +1,8 @@
+.container {
+	margin: 20px;
+}
+
+
 .author {
 
 
@@ -11,7 +16,7 @@ th {
 	text-align: left;
 }
 
-.rate {
+.rate-tpl {
 	color: gray;
 }
 
@@ -24,5 +29,5 @@ th {
 }
 
 .enter-rating {
-  width: 25px;
+  width: 32px;
 }

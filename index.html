@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
-  <body>
+<body>  
+  <div class="container">
     <form class="entry-form">
       <h2>Please enter both a quote and an author</h2>
       <h3>Enter your quote below</h3> 
@@ -20,38 +21,34 @@
       <h2>The Quote Hub</h2>
 
       <h3>This is where I will display all quotes</h3>
-
-<table class="quote-table">
-
-  <tr>
-    <th>Author</th>
-    <th>Quote</th> 
-    <th>Rating</th>
-    <th>Avg Rating</th>
-  </tr>
-  <tr id="quote-row-tpl">
-    <td class="author">Everyone</td>
-    <td class="quote">What's Up</td>
-    <td class="rate">Rate 1-5</td>
-    <td class="avg-rating">5</td>
-  </tr>
-
-</table>
-
-
-
-      
-
-
-
-
-
     </div>
+    <div>
+      <table class="quote-table">
+        <tr>
+          <th>Author</th>
+          <th>Quote</th> 
+          <th>Rating</th>
+          <th>Avg Rating</th>
+        </tr>
+        <tr id="quote-row-tpl">
+          <td class="author-tpl">Everyone</td>
+          <td class="quote-tpl">What's Up</td>
+          <td class="rate-tpl">Rate 1-5</td>
+          <td class="avg-rating-tpl"></td>
+        </tr>
+      </table>
+    </div>
+ 
+
+
+  </div>
+
+
 
     
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
-    <script src="main.js"></script>
+    <script src="new.js"></script>
 
-  </body>
+</body>
 </html>
